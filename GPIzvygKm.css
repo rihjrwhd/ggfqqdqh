@@ -1,0 +1,91 @@
+body {
+    min-height: 660px;
+    background-image: url(rea-pop-gmd-Immortal-mid-bg.jpg);
+    background-size: 2000px;
+    background-position: 50% 30px;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+header {
+    text-align: right;
+    padding-right: 50px;
+}
+
+.btn-block {
+    font-size: 36px;
+    margin-top: 15px;
+}
+
+.push-bottom {
+    margin-top: 60px;
+}
+
+.advertorial-notice {
+    text-align: right;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.btn-success {
+    color: black;
+    border-color: #ffee98;
+    background: #ffee98; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffee98 0%, #c8981a 70%);
+    background: -webkit-linear-gradient(top, #ffee98 0%,#c8981a 70%);
+    background: linear-gradient(to bottom, #ffee98 0%,#c8981a 70%);
+}
+
+
+    .btn-success:hover {
+        color: black;
+        border-color: #ffee98;
+        background: #ffee98; /* Old browsers */
+        background: -moz-linear-gradient(top, #ffee98 0%, #c8981a 50%);
+        background: -webkit-linear-gradient(top, #ffee98 0%,#c8981a 50%);
+        background: linear-gradient(to bottom, #ffee98 0%,#c8981a 50%);
+    }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+
+
+@media (min-resolution: 2dppx) {
+    body {
+        background-image: url(rea-pop-gmd-Immortal-mid-bg_2x.jpg);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .btn-block {
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .btn-block {
+        font-size: 30px;
+    }
+
+
+    body {
+        background-size: 1200px;
+    }
+}
